@@ -1,66 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+    return (
+        <main className="container" style={{ lineHeight: 1.65 }}>
+            <section
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 28,
+                    flexWrap: "wrap",
+                    paddingTop: 22,
+                    paddingBottom: 22,
+                }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+                <div style={{ flex: "1 1 420px", minWidth: 280 }}>
+                    <h1 style={{ margin: 0, fontSize: 43, letterSpacing: -.8, fontWeight: 500 }}>Yunze Liao</h1>
+
+                    <p className="muted" style={{ margin: "12px 0 0" }}>
+                        I build systems for analysis, modeling, and decision-making, grounded in first-principles reasoning and risk-aware design. My work focuses on performance-oriented infrastructure that translates quantitative theory into dependable, deployable, and scalable systems. This site is a small archive of notes and short essays on ideas, experiments, and lessons learned while building.
+                    </p>
+
+                    <p className="muted" style={{ margin: "10px 0 0 " }}>
+                        <b>Now</b>: building this site.
+                    </p>
+
+                    <p style={{ margin: "16px 0 0" }}>
+                        <a href="/blog">Blog</a> {"  ·  "}
+                        <a href="https://github.com/ryanliaoyz" target="_blank" rel="noreferrer">GitHub</a> {"  ·  "}
+                        <a href="https://www.linkedin.com/in/yunze-liao-a44566215/" target="_blank" rel="noreferrer me">Linkedin</a> {"  ·  "}
+                        <a href="/cv.pdf" target="_blank" rel="noreferrer">CV</a>{"  ·  "}
+                        <a href="mailto:yunze@zelvynintelligence.com">Email</a>
+                    </p>
+                </div>
+            </section>
+
+            <hr />
+
+            <section>
+                <h2 style={{ margin: "0 0 10px", fontSize: 30, fontWeight: 500 }}>Recent</h2>
+            </section>
+        </main>
+    );
 }
+
