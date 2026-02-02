@@ -5,6 +5,9 @@ import { useState } from 'react';
 export default function EmailContact() {
     const [showContact, setShowContact] = useState(false);
 
+    const a = "eXVuemUgW2F0XQ==";
+    const b = "IHplbHZ5bmludGVsbGlnZW5jZSBbZG90XSBjb20=";
+
     return (
         <span
             onClick={(e) => {
@@ -29,7 +32,7 @@ export default function EmailContact() {
             aria-label="Reveal contact"
         >
             {showContact
-                ? `yunze [at] zelvynintelligence [dot] com`
+                ? `${atob(a)} ${atob(b)}`
                 : "Email"
             }
         </span>
