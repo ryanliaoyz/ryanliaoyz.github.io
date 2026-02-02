@@ -1,3 +1,5 @@
+import EmailContact from './components/EmailContact';
+
 export default function Home() {
     return (
         <main className="container" style={{ lineHeight: 1.65 }}>
@@ -28,7 +30,7 @@ export default function Home() {
                         <a href="https://github.com/ryanliaoyz" target="_blank" rel="noreferrer">GitHub</a> {"  ·  "}
                         <a href="https://www.linkedin.com/in/yunze-liao-a44566215/" target="_blank" rel="noreferrer me">Linkedin</a> {"  ·  "}
                         <a href="/cv.pdf" target="_blank" rel="noreferrer">CV</a>{"  ·  "}
-                        <a href="mailto:yunze@zelvynintelligence.com">Email</a>
+                        <EmailContact />
                     </p>
                 </div>
             </section>
