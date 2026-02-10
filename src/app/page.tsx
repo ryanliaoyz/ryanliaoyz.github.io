@@ -4,7 +4,7 @@ import UpdateStamp from './components/UpdateStamp';
 
 export default function Home() {
     return (
-        <main className="container" style={{ lineHeight: 1.65 }}>
+        <main className="container" style={{ lineHeight: 1.65 , flex: 1, display: "flex", flexDirection: "column"}}>
             <section
                 style={{
                     display: "flex",
@@ -22,7 +22,7 @@ export default function Home() {
                     <p className="muted" style={{ margin: "12px 0 0" }}>
                         I build systems for analysis, modeling, and decision-making, grounded in first-principles reasoning and risk-aware design. My work focuses on performance-oriented infrastructure that translates quantitative theory into dependable, deployable, and scalable systems.
                     </p>
-                    <p className="muted" style={{ margin: "12px 0 0"}}>
+                    <p className="muted" style={{ margin: "12px 0 0" }}>
                         This site mainly serves as a small archive of notes and short essays on ideas, experiments, and lessons learned while building.
                     </p>
                     <p className="muted" style={{ margin: "10px 0 0 " }}>
@@ -44,9 +44,12 @@ export default function Home() {
             <section>
                 <h2 style={{ margin: "0 0 10px", fontSize: 30, fontWeight: 500 }}>Recent</h2>
             </section>
-<UpdateStamp />
-            </main>
-    
+            <footer style={{ marginTop: "auto", paddingTop: 16 }}>
+                <hr style={{ margin: "0 0 14px" }} />
+                <UpdateStamp />
+            </footer>
+        </main>
+
     );
 }
 

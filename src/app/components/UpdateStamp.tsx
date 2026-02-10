@@ -29,7 +29,7 @@ export default function UpdateStamp() {
                 fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
             }}
         >
-            Last update · {date}
+            Last update · {date} UTC
         </div>
     );
 
