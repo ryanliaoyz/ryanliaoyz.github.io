@@ -1,0 +1,61 @@
+:root {
+    --bg: #ffffff;
+    --fg: #171717;
+    --muted: #5b616a;
+    --border: #e7e7e4;
+    --link: #1f5fbf;
+    --maxw: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0a0a0a;
+        --fg: #ededed;
+        --muted: #a1a6ad;
+        --border: #1b1e26;
+        --link: #7bb0ff;
+    }
+}
+
+.container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px 18px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+html {
+    color-scheme: light dark;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 22px 0;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
