@@ -23,6 +23,26 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Write deploy manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          node -e '
+            const fs = require("fs");
+            const p = "out/manifest.json";
+            const m = {
+              deployed_at: process.env.GITHUB_RUN_STARTED_AT || null,
+              run_id: process.env.GITHUB_RUN_ID || null,
+              run_number: process.env.GITHUB_RUN_NUMBER || null,
+              sha: process.env.GITHUB_SHA || null,
+              ref: process.env.GITHUB_REF || null,
+              repository: process.env.GITHUB_REPOSITORY || null
+            };
+            fs.writeFileSync(p, JSON.stringify(m, null, 2) + "\n");
+            console.log("Wrote", p);
+          '
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
