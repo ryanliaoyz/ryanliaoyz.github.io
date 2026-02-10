@@ -1,10 +1,9 @@
 import EmailContact from './components/EmailContact';
 import UpdateStamp from './components/UpdateStamp';
 
-
 export default function Home() {
     return (
-        <main className="container" style={{ lineHeight: 1.65 , flex: 1, display: "flex", flexDirection: "column"}}>
+        <main className="container" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
             <section
                 style={{
                     display: "flex",
@@ -25,7 +24,7 @@ export default function Home() {
                     <p className="muted" style={{ margin: "12px 0 0" }}>
                         This site mainly serves as a small archive of notes and short essays on ideas, experiments, and lessons learned while building.
                     </p>
-                    <p className="muted" style={{ margin: "10px 0 0 " }}>
+                    <p className="muted" style={{ margin: "10px 0 0" }}>
                         <b>Now</b>: Working on some stuff ML.
                     </p>
 
@@ -49,7 +48,5 @@ export default function Home() {
                 <UpdateStamp />
             </footer>
         </main>
-
     );
 }
-

@@ -10,23 +10,14 @@ export default function EmailContact() {
 
     return (
         <span
-            onClick={(e) => {
-                e.currentTarget.style.textDecoration = showContact ? 'none' : 'dotted underline';
-                setShowContact(!showContact);
-            }}
+            onClick={() => setShowContact((v) => !v)}
             style={{
                 cursor: 'pointer',
-                color: showContact ? '#000000': '#0070f3',
+                color: showContact ? 'var(--fg)' : 'var(--link)',
                 fontSize: 'inherit',
                 textDecoration: showContact ? 'dotted underline' : 'none',
-                textUnderlineOffset : '3px',
-                transition: 'color 0.1s ease'
-            }}
-            onMouseEnter = {(e) => {
-                if (!showContact) e.currentTarget.style.textDecoration = 'underline';
-            }}
-            onMouseLeave = {(e) => {
-                e.currentTarget.style.textDecoration = showContact? 'dotted underline' : 'none';
+                textUnderlineOffset: '3px',
+                transition: 'color 0.1s ease',
             }}
             role="button"
             aria-label="Reveal contact"

@@ -16,9 +16,7 @@ export default function UpdateStamp() {
             .catch(() => { });
     }, []);
 
-
     if (!date) return null;
-
 
     return (
         <div
@@ -32,5 +30,4 @@ export default function UpdateStamp() {
             Last update · {date} UTC
         </div>
     );
-
 }
