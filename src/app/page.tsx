@@ -1,4 +1,6 @@
 import EmailContact from './components/EmailContact';
+import UpdateStamp from './components/UpdateStamp';
+
 
 export default function Home() {
     return (
@@ -42,7 +44,9 @@ export default function Home() {
             <section>
                 <h2 style={{ margin: "0 0 10px", fontSize: 30, fontWeight: 500 }}>Recent</h2>
             </section>
-        </main>
+<UpdateStamp />
+            </main>
+    
     );
 }
 
