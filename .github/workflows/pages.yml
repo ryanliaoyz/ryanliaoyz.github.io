@@ -23,13 +23,12 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-            - name: Write deploy manifest
+      - name: Write deploy manifest
         shell: bash
         run: |
           set -euo pipefail
           node -e 'require("fs").writeFileSync("out/manifest.json", JSON.stringify({ deployed_at: new Date().toISOString() }) + "\n")'
-
-
+      
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
