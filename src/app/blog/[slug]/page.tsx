@@ -20,7 +20,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     return (
         <main className="container" style={{ flex: 1 }}>
             <p style={{ margin: "22px 0 4px" }}>
-                <a href="/blog">← Back</a>
+                <a href="/blog"> Back</a>
             </p>
             <h1 style={{ fontSize: 36, fontWeight: 500, margin: "8px 0 4px" }}>{post.title}</h1>
             <p className="muted" style={{ fontSize: 14, margin: "0 0 20px" }}>{post.date}</p>
