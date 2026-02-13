@@ -1,10 +1,11 @@
 import EmailContact from './components/EmailContact';
 import UpdateStamp from './components/UpdateStamp';
-
+import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
+    const recent = getAllPosts().slice(0, 5);
     return (
-        <main className="container" style={{ lineHeight: 1.65 , flex: 1, display: "flex", flexDirection: "column"}}>
+        <main className="container" style={{ lineHeight: 1.65, flex: 1, display: "flex", flexDirection: "column" }}>
             <section
                 style={{
                     display: "flex",
@@ -43,6 +44,14 @@ export default function Home() {
 
             <section>
                 <h2 style={{ margin: "0 0 10px", fontSize: 30, fontWeight: 500 }}>Recent</h2>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {recent.map((p) => (
+                        <li key={p.slug} style={{ marginBottom: 14 }}>
+                            <a href={`/blog/${p.slug}`}>{p.title}</a>
+                            <span className="muted" style={{ fontSize: 14, marginLeft: 8 }}>{p.date}</span>
+                        </li>
+                    ))}
+                </ul>
             </section>
             <footer style={{ marginTop: "auto", paddingTop: 16 }}>
                 <hr style={{ margin: "0 0 14px" }} />

@@ -10,7 +10,7 @@ export default function UpdateStamp() {
             .then((r) => r.json())
             .then((m) => {
                 if (m?.deployed_at) {
-                    setDate(m.deployed_at);
+                    setDate(m.deployed_at.slice(0, 19));
                 }
             })
             .catch(() => { });
