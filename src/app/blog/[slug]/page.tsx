@@ -18,7 +18,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     const post = await getPost(slug);
 
     return (
-        <main className="container" style={{ flex: 1 }}>
+        <main className="container" style={{ width: "100%", display: "block" }}>
             <p style={{ margin: "22px 0 4px" }}>
                 <a href="/blog"> Back</a>
             </p>
