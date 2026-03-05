@@ -9,6 +9,7 @@ export interface PostMeta {
     slug: string;
     title: string;
     date: string;
+    updated?: string;
     description: string;
 }
 
@@ -51,6 +52,7 @@ export async function getPost(slug: string): Promise<Post> {
         slug,
         title: data.title ?? slug,
         date: data.date ?? "",
+        updated: data.updated ?? undefined,
         description: data.description ?? "",
         contentHtml,
     };

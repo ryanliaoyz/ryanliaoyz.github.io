@@ -23,7 +23,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 <a href="/blog"> Back</a>
             </p>
             <h1 style={{ fontSize: 36, fontWeight: 500, margin: "8px 0 4px" }}>{post.title}</h1>
-            <p className="muted" style={{ fontSize: 14, margin: "0 0 20px" }}>{post.date}</p>
+            <p className="muted" style={{ fontSize: 14, margin: "0 0 20px" }}>{post.date}
+                {post.updated && <span> (Updated {post.updated}) </span>}
+            </p>
             <article dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </main>
     );
