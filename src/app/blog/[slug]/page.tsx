@@ -25,6 +25,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <h1 style={{ fontSize: 36, fontWeight: 500, margin: "8px 0 4px" }}>{post.title}</h1>
             <p className="muted" style={{ fontSize: 14, margin: "0 0 20px" }}>{post.date}
                 {post.updated && <span> (Updated {post.updated}) </span>}
+                {post.tags.filter((t) => t !== "ai-gen").map((tag) => (
+                    <span key={tag} style={{
+                        fontSize: 12,
+                        border: "1px solid var(--border)",
+                        borderRadius: 4,
+                        padding: "1px 6px",
+                        marginLeft: 6,
+                    }}>{tag}</span>
+                ))}
             </p>
             <article dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         </main>

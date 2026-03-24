@@ -11,6 +11,7 @@ export interface PostMeta {
     date: string;
     updated?: string;
     description: string;
+    tags: string[];
 }
 
 export interface Post extends PostMeta {
@@ -22,13 +23,14 @@ export function getAllPosts(): PostMeta[] {
     const posts = files.map((filename) => {
         const slug = filename.replace(/\.md$/, "");
         const raw = fs.readFileSync(path.join(BASE_DIR, filename), "utf-8");
-        const {data} = matter(raw);
+        const { data } = matter(raw);
 
         return {
             slug,
             title: data.title ?? slug,
             date: data.date ?? "",
             description: data.description ?? "",
+            tags: Array.isArray(data.tags) ? data.tags : [],
         };
     });
 
@@ -37,16 +39,16 @@ export function getAllPosts(): PostMeta[] {
 
 
 export function getAllSlugs(): string[] {
-  return fs
-    .readdirSync(BASE_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(/\.md$/, ""));
+    return fs
+        .readdirSync(BASE_DIR)
+        .filter((f) => f.endsWith(".md"))
+        .map((f) => f.replace(/\.md$/, ""));
 }
 
 
 export async function getPost(slug: string): Promise<Post> {
     const raw = fs.readFileSync(path.join(BASE_DIR, `${slug}.md`), "utf-8");
-    const {data, content} = matter(raw);
+    const { data, content } = matter(raw);
     const contentHtml = await marked(content);
     return {
         slug,
@@ -55,5 +57,6 @@ export async function getPost(slug: string): Promise<Post> {
         updated: data.updated ?? undefined,
         description: data.description ?? "",
         contentHtml,
+        tags: Array.isArray(data.tags) ? data.tags : [],
     };
 }
