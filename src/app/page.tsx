@@ -3,7 +3,7 @@ import UpdateStamp from './components/UpdateStamp';
 import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
-    const recent = getAllPosts().slice(0, 5);
+    const recent = getAllPosts().filter((p) => !p.tags.includes("ai-gen")).slice(0, 5);
     return (
         <main className="container" style={{ lineHeight: 1.65, flex: 1, display: "flex", flexDirection: "column" }}>
             <section
