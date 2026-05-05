@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+
+    // Vendored/archived static legacy files; do not lint.
+    "legacy/**",
   ]),
 ]);
 

@@ -1,5 +1,6 @@
 import { getAllSlugs, getPost } from "@/lib/posts";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export function generateStaticParams() {
     return getAllSlugs().map((slug) => ({ slug }));
@@ -20,7 +21,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     return (
         <main className="container" style={{ width: "100%", display: "block" }}>
             <p style={{ margin: "22px 0 4px" }}>
-                <a href="/blog"> Back</a>
+                <Link href="/blog"> Back</Link>
             </p>
             <h1 style={{ fontSize: 36, fontWeight: 500, margin: "8px 0 4px" }}>{post.title}</h1>
             <p className="muted" style={{ fontSize: 14, margin: "0 0 20px" }}>{post.date}

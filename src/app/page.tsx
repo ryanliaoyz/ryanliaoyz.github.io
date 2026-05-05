@@ -1,6 +1,7 @@
 import EmailContact from './components/EmailContact';
 import UpdateStamp from './components/UpdateStamp';
 import { getAllPosts } from "@/lib/posts";
+import Link from "next/link";
 
 export default function Home() {
     const recent = getAllPosts().filter((p) => !p.tags.includes("ai-gen")).slice(0, 5);
@@ -31,10 +32,10 @@ export default function Home() {
                     </p>
 
                     <p style={{ margin: "16px 0 0" }}>
-                        <a href="/blog">Blog</a> {"  ·  "}
-                        <a href="https://github.com/ryanliaoyz" target="_blank" rel="noreferrer">GitHub</a> {"  ·  "}
-                        <a href="https://www.linkedin.com/in/yunze-liao-a44566215/" target="_blank" rel="noreferrer me">Linkedin</a> {"  ·  "}
-                        <a href="/cv.pdf" target="_blank" rel="noreferrer">CV</a>{"  ·  "}
+                        <Link href="/blog">Blog</Link> {"  ·  "}
+                        <Link href="https://github.com/ryanliaoyz" target="_blank" rel="noreferrer">GitHub</Link> {"  ·  "}
+                        <Link href="https://www.linkedin.com/in/yunze-liao-a44566215/" target="_blank" rel="noreferrer me">Linkedin</Link> {"  ·  "}
+                        <Link href="/cv.pdf" target="_blank" rel="noreferrer">CV</Link>{"  ·  "}
                         <EmailContact />
                     </p>
                 </div>
@@ -47,7 +48,7 @@ export default function Home() {
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                     {recent.map((p) => (
                         <li key={p.slug} style={{ marginBottom: 14 }}>
-                            <a href={`/blog/${p.slug}`}>{p.title}</a>
+                            <Link href={`/blog/${p.slug}`}>{p.title}</Link>
                             <span className="muted" style={{ fontSize: 14, marginLeft: 8 }}>{p.date}</span>
                         </li>
                     ))}
