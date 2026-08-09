@@ -28,7 +28,7 @@ export default function Home() {
                         This site mainly serves as a small archive of notes and short essays on ideas, experiments, and lessons learned while building.
                     </p>
                     <p className="muted" style={{ margin: "10px 0 0 " }}>
-                        <b>Now</b>: Working on some stuff ML.
+                        <b>Now:</b> Looking for employment.
                     </p>
 
                     <p style={{ margin: "16px 0 0" }}>
